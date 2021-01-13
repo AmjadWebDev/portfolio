@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import './App.css';
 import Menu from './components/Menu';
 import Nav from './components/Nav';
@@ -8,32 +8,13 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
-class App extends React.Component {
-  state = {
-    menuState: false,
+const App = () => {
+  const [menuState, setMenuState] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuState(!menuState ? 'active' : menuState === 'deactive' ? 'active' : 'deactive');
   };
-
-  toggleMenu = () => {
-    this.setState((state) => ({
-      menuState: !state.menuState ? 'active' : state.menuState === 'deactive' ? 'active' : 'deactive',
-    }));
-  };
-
-  render() {
-    return (
-      <React.Fragment>
-        <Menu toggleMenu={this.toggleMenu} showMenu={this.state.menuState} />
-        <Nav toggleMenu={this.toggleMenu} showMenu={this.state.menuState} />
-        <Header />
-        <About />
-        <Projects />
-        <Contact />
-        <Footer />
-      </React.Fragment>
-    );
-  }
-
-  componentDidMount() {
+  useEffect(() => {
     const navbar = document.querySelector('#navbar');
     const header = document.querySelector('#welcome-section');
     const forest = document.querySelector('.forest');
@@ -69,7 +50,19 @@ class App extends React.Component {
         }
       }
     })();
-  }
-}
+  }, []);
+
+  return (
+    <Fragment>
+      <Menu toggleMenu={toggleMenu} showMenu={menuState} />
+      <Nav toggleMenu={toggleMenu} showMenu={menuState} />
+      <Header />
+      <About />
+      <Projects />
+      <Contact />
+      <Footer />
+    </Fragment>
+  );
+};
 
 export default App;

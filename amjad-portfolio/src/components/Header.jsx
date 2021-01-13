@@ -8,11 +8,15 @@ const Header = () => {
       <div className="moon" />
       <div className="container">
         <h1>
-          <span className="line">I do</span>
-          <span className="line">web Development</span>
-          <span className="line">
-            <span className="color">&</span> code.
+          <span style={{ color: '#00cff3' }} className="line">
+            I do
           </span>
+          <br />
+          <span className="line">web Development</span>
+          {/* <span className="line">
+            <span className="color">&</span> code.
+          </span> */}
+          <br />
         </h1>
         <div className="buttons">
           <a href="#projects">my portfolio</a>
