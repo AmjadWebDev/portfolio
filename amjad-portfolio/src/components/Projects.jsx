@@ -10,7 +10,7 @@ const Projects = () => {
           <p className="separator" />
           <p className="subtitle">
             Here's a list of <u>most</u> of the projects I've been working on lately. All of these were built during my study in{' '}
-            <a href="wildcodeschool.com/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.wildcodeschool.com/fr-FR" target="_blank" rel="noopener noreferrer">
               Wild Code School
             </a>
             , where I've been coding for almost 5 months non-stop until I completed all the projects required to get my Web Developer certification.

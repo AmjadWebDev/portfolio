@@ -13,9 +13,6 @@ const Header = () => {
           </span>
           <br />
           <span className="line">web Development</span>
-          {/* <span className="line">
-            <span className="color">&</span> code.
-          </span> */}
           <br />
         </h1>
         <div className="buttons">
